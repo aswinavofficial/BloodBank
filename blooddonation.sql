@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2017 at 11:10 PM
+-- Generation Time: Nov 07, 2017 at 11:46 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 5.6.32-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -67,7 +67,7 @@ CREATE TABLE `details` (
 INSERT INTO `details` (`id`, `Name`, `Location`, `Gender`, `Mob_no`, `Age`, `Blood_Group`, `Type`) VALUES
 (10, 'ASWIN A V', 'Ernakulam', 'Male', '9746354664', 20, 'A+', 'Donor'),
 (11, 'Sunil', 'Ernakulam', 'Male', '8891803255', 50, 'A+', 'Donor'),
-(12, 'Meena', 'Ernakulam', 'Male', '9061655519', 46, 'A+', 'Donor');
+(12, 'Meena', 'Ernakulam', 'Male', '9061655519', 46, 'O+', 'Donor');
 
 -- --------------------------------------------------------
 
