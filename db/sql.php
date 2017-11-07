@@ -59,6 +59,21 @@ class User {
 
 	   }
 
+     public function selectl()
+   {
+    $sql="select distinct location from details";
+   return $this->dbObj->ExecuteQuery($sql, 1);
+
+   }
+
+   public function searchpage($bloodgroup,$location)
+   {
+   $sql="select * from details where Blood_Group='$bloodgroup' and location='$location' ";
+   return $this->dbObj->ExecuteQuery($sql, 1);
+
+   }
+
+
 
 
     public function update($user_name, $password, $name, $address, $contact_no, $about, $old_password, $user_id) {
