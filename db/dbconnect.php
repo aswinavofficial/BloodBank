@@ -20,6 +20,7 @@ class db {
             exit();
         }
 
+
     }
 
     public function Disconnect() {
@@ -34,7 +35,7 @@ class db {
         try {
             $sql = str_replace("''", "null", $sql);
             $this->Connect();
-            $sql = mysqli_escape_string($this->con, $sql);
+          //  $sql = mysqli_escape_string($this->con, $sql);
             $data = mysqli_query($this->con, $sql);
 
             if ($type == 1) {

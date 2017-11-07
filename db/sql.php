@@ -22,13 +22,16 @@ class User {
 
    public function  regd($fullname,$mobileno,$age,$gender,$bloodgroup,$location,$password)
    {
-    $sql = "INSERT INTO login( Mob_no,password,Type) VALUES
-		('$mobileno','$password','Donor')";
-    $id=$this->dbObj->ExecuteQuery($sql, 2);
 
-    $sql = "INSERT INTO details(id,Name,Location,Gender,Mob_no,Age,Blood_Group,Type) VALUES
+   $sql="insert into login(Mob_no,password,Type) values('$mobileno','$password','Donor')";
+
+  $id= $this->dbObj->ExecuteQuery($sql, 2);
+
+    $sql = "insert into details(id,Name,Location,Gender,Mob_no,Age,Blood_Group,Type) VALUES
     ('$id','$fullname','$location','$gender','$mobileno','$age','$bloodgroup','Donor')";
-    return $this->dbObj->ExecuteQuery($sql, 2);
+    $r=$this->dbObj->ExecuteQuery($sql, 2);
+    return $id;
+
    }
 
 

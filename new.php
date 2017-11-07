@@ -19,7 +19,7 @@ $location=$_POST['location'];
 $password=$_POST['password'];
 
 $id= ($objUser->regd($fullname,$mobileno,$age,$gender,$bloodgroup,$location,$password));
-if($lastInsertId)
+if($id)
 {
 $msg="Your info submitted successfully";
 }
