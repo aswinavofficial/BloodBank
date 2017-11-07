@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2017 at 12:51 AM
+-- Generation Time: Nov 07, 2017 at 10:19 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 5.6.32-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -23,6 +23,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bloodgroup`
+--
+
+CREATE TABLE `bloodgroup` (
+  `id` int(11) NOT NULL,
+  `BloodGroup` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bloodgroup`
+--
+
+INSERT INTO `bloodgroup` (`id`, `BloodGroup`) VALUES
+(1, 'A-'),
+(2, 'AB-'),
+(3, 'O-'),
+(4, 'A-'),
+(5, 'A+'),
+(6, 'AB+');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `details`
 --
 
@@ -30,7 +53,8 @@ CREATE TABLE `details` (
   `id` int(10) NOT NULL,
   `Name` varchar(20) DEFAULT 'NILL',
   `Location` varchar(20) NOT NULL DEFAULT 'NILL',
-  `Contact` varchar(20) NOT NULL,
+  `Gender` varchar(10) NOT NULL,
+  `Mob_no` int(20) NOT NULL,
   `Age` int(2) NOT NULL DEFAULT '0',
   `Blood_Group` varchar(4) NOT NULL DEFAULT 'NILL',
   `Type` varchar(10) NOT NULL DEFAULT 'NILL'
@@ -57,7 +81,7 @@ CREATE TABLE `inventory` (
 
 CREATE TABLE `login` (
   `id` int(10) NOT NULL,
-  `username` varchar(20) NOT NULL,
+  `Mob_no` int(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `Type` varchar(10) NOT NULL DEFAULT 'NILL'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -65,6 +89,12 @@ CREATE TABLE `login` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bloodgroup`
+--
+ALTER TABLE `bloodgroup`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `details`
@@ -90,6 +120,11 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `bloodgroup`
+--
+ALTER TABLE `bloodgroup`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `login`
 --

@@ -19,7 +19,7 @@ class db {
             echo 'Error: ' . mysqli_connect_error();
             exit();
         }
-     echo "Connected Successfully";
+
     }
 
     public function Disconnect() {
