@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2017 at 10:19 PM
+-- Generation Time: Nov 07, 2017 at 11:10 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 5.6.32-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -54,11 +54,20 @@ CREATE TABLE `details` (
   `Name` varchar(20) DEFAULT 'NILL',
   `Location` varchar(20) NOT NULL DEFAULT 'NILL',
   `Gender` varchar(10) NOT NULL,
-  `Mob_no` int(20) NOT NULL,
+  `Mob_no` varchar(20) NOT NULL,
   `Age` int(2) NOT NULL DEFAULT '0',
   `Blood_Group` varchar(4) NOT NULL DEFAULT 'NILL',
   `Type` varchar(10) NOT NULL DEFAULT 'NILL'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `details`
+--
+
+INSERT INTO `details` (`id`, `Name`, `Location`, `Gender`, `Mob_no`, `Age`, `Blood_Group`, `Type`) VALUES
+(10, 'ASWIN A V', 'Ernakulam', 'Male', '9746354664', 20, 'A+', 'Donor'),
+(11, 'Sunil', 'Ernakulam', 'Male', '8891803255', 50, 'A+', 'Donor'),
+(12, 'Meena', 'Ernakulam', 'Male', '9061655519', 46, 'A+', 'Donor');
 
 -- --------------------------------------------------------
 
@@ -81,10 +90,19 @@ CREATE TABLE `inventory` (
 
 CREATE TABLE `login` (
   `id` int(10) NOT NULL,
-  `Mob_no` int(20) NOT NULL,
+  `Mob_no` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `Type` varchar(10) NOT NULL DEFAULT 'NILL'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`id`, `Mob_no`, `password`, `Type`) VALUES
+(10, '9746354664', '1234', 'Donor'),
+(11, '8891803255', '12345', 'Donor'),
+(12, '9061655519', '123456', 'Donor');
 
 --
 -- Indexes for dumped tables
@@ -129,7 +147,7 @@ ALTER TABLE `bloodgroup`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- Constraints for dumped tables
 --
