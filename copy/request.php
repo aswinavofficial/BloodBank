@@ -91,6 +91,7 @@ $error="Something went wrong. Please try again";
                 <a href="index.php">Home</a>
             </li>
             <li class="breadcrumb-item active">Request Blood</li>
+            <li class="breadcrumb-item "><a href="search.php">Search Blood</a></li>
         </ol>
             <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
         else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>

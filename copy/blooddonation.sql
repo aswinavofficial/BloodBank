@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 27, 2017 at 11:22 AM
+-- Generation Time: Nov 27, 2017 at 12:10 PM
 -- Server version: 5.7.20-0ubuntu0.16.04.1
 -- PHP Version: 5.6.32-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -132,7 +132,8 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`req_id`, `patient_name`, `BloodGroup`, `Location`, `mob_no`, `hospital_name`, `hospital_address`, `req_date`, `Qty`, `info`) VALUES
-(1, 'test', 'O+', 'Ernakulam', '12345', 'Little Flower', 'er', '2017-11-16', '200', 'ewtr');
+(1, 'test', 'O+', 'Ernakulam', '12345', 'Little Flower', 'er', '2017-11-16', '200', 'ewtr'),
+(2, 'test', 'O+', 'Ernakulam', '12345', 'Little Flower', 'er', '2017-11-16', '200', 'ewtr');
 
 --
 -- Indexes for dumped tables
@@ -188,7 +189,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `req_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `req_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
