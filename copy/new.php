@@ -87,92 +87,10 @@ $error="Something went wrong. Please try again";
 
 
 
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="index.php">Home</a>
-            </li>
-            <li class="breadcrumb-item active">Become a Donor</li>
-        </ol>
-            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
-        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error);  header( "refresh:1;url=index.php" ); ?> </div><?php }
+        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg);  header( "refresh:1;url=index.php" ); ?> </div><?php }?>
         <!-- Content Row -->
-        <form name="donar" action="new.php" method="post">
-<div class="row">
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Full Name<span style="color:red">*</span></div>
-<div><input type="text" name="fullname" class="form-control" required></div>
-</div>
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Mobile Number<span style="color:red">*</span></div>
-<div><input type="text" name="mobileno" class="form-control" required></div>
-</div>
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Age<span style="color:red">*</span></div>
-<div><input type="text" name="age" class="form-control" required></div>
-</div>
 
-</div>
-
-<div class="row">
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Password<span style="color:red">*</span></div>
-  <div><input type="password" name="password" class="form-control" required></div>
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Confirm Password<span style="color:red">*</span></div>
-  <div><input type="password" name="cpassword" class="form-control " required></div>
-  </div>
-
-</div>
-
-
-<div class="row">
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Gender<span style="color:red">*</span></div>
-  <div><select name="gender" class="form-control" required>
-  <option value="">Select</option>
-  <option value="Male">Male</option>
-  <option value="Female">Female</option>
-  </select>
-  </div>
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Blood Group<span style="color:red">*</span> </div>
-  <div><select name="bloodgroup" class="form-control" required>
-    <?php
-      while ($row=mysqli_fetch_assoc($result) )
-           {
-      echo "<option value={$row['BloodGroup']} >".htmlspecialchars($row['BloodGroup'])."</option>";
-       }
-        ?>
-  </select>
-  </div>
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Location<span style="color:red">*</span></div>
-  <div><input type="text" name="location" class="form-control" required></div>
-  </div>
-
-
-
-</div>
-
-<div class="row">
-<div class="col-lg-4 mb-4">
-<div><input type="submit" name="submit" class="btn btn-primary" value="submit" style="cursor:pointer"></div>
-</div>
-
-
-
-</div>
-
-
-
-        <!-- /.row -->
-</form>
         <!-- /.row -->
 </div>
 

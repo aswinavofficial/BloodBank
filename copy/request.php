@@ -86,109 +86,11 @@ $error="Something went wrong. Please try again";
 
 
 
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="index.php">Home</a>
-            </li>
-            <li class="breadcrumb-item active">Request Blood</li>
-            <li class="breadcrumb-item "><a href="search.php">Search Blood</a></li>
-        </ol>
-            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
-        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
+
+            <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error);  header( "refresh:1;url=index.php" ); ?> </div><?php }
+        else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg);  header( "refresh:1;url=index.php" );?> </div><?php }?>
         <!-- Content Row -->
-        <form name="donar" action="request.php" method="post">
-<div class="row">
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Patient Name<span style="color:red">*</span></div>
-<div><input type="text" name="fullname" class="form-control" required></div>
-</div>
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Blood Group<span style="color:red">*</span> </div>
-<div><select name="bloodgroup" class="form-control" required>
-  <?php
-    while ($row=mysqli_fetch_assoc($result) )
-         {
-    echo "<option value={$row['BloodGroup']} >".htmlspecialchars($row['BloodGroup'])."</option>";
-     }
-      ?>
-</select>
-</div>
-</div>
 
-<div class="col-lg-4 mb-4">
-<div class="font-italic">Location<span style="color:red">*</span> </div>
-<div><select name="location" class="form-control" required>
-  <?php
-    while ($row=mysqli_fetch_assoc($result1) )
-         {
-    echo "<option value={$row['location']} >".htmlspecialchars($row['location'])."</option>";
-     }
-      ?>
-</select>
-</div>
-</div>
-
-
-</div>
-
-
-
-<div class="row">
-
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Contact Number<span style="color:red">*</span></div>
-  <div><input type="text" name="mobileno" class="form-control" required></div>
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Hospital Name<span style="color:red">*</span></div>
-  <div><input type="text" name="hospital" class="form-control" required></div>
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">When Required<span style="color:red">*</span></div>
-  <div><input type="date" name="req_date" class="form-control" required></div>
-
-  </div>
-
-
-</div>
-
-<div class="row">
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Quantity Required(millilitres)<span style="color:red">*</span></div>
-  <div><input type="number" name="quantity" min="200" max="2000" class="form-control" required></div>
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Hospital Address<span style="color:red">*</span></div>
-  <div><textarea type="textarea" name="address" class="form-control" required></textarea></div>
-
-  </div>
-
-  <div class="col-lg-4 mb-4">
-  <div class="font-italic">Other Info</div>
-  <div><textarea type="textarea" name="info" class="form-control" ></textarea></div>
-
-  </div>
-
-</div>
-
-<div class="row">
-<div class="col-lg-4 mb-4">
-<div><input type="submit" name="submit" class="btn btn-primary" value="submit" style="cursor:pointer"></div>
-</div>
-
-
-
-</div>
-
-
-
-        <!-- /.row -->
-</form>
         <!-- /.row -->
 </div>
 

@@ -70,6 +70,13 @@ class User {
 
 	   }
 
+     public function reqnew()
+  {
+   $sql="select * from request";
+  return $this->dbObj->ExecuteQuery($sql, 1);
+
+  }
+
      public function selectl()
    {
     $sql="select distinct location from details";
