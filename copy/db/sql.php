@@ -34,6 +34,17 @@ class User {
 
    }
 
+   public function  request($fullname,$bloodgroup,$location,$mobileno,$hospital,$req_date,$quantity,$address,$info)
+   {
+
+   $sql="insert into request(patient_name,BloodGroup,Location,mob_no,hospital_name,req_date,Qty,hospital_address,info) values('$fullname','$bloodgroup','$location','$mobileno','$hospital','$req_date','$quantity','$address','$info')";
+
+  $id= $this->dbObj->ExecuteQuery($sql, 2);
+
+    return $id;
+
+   }
+
 
 
    public function  trans_d($req_id,$regs,$regd,$status)
@@ -68,7 +79,7 @@ class User {
 
    public function searchpage($bloodgroup,$location)
    {
-    
+
    $sql="select * from details where Blood_Group='$bloodgroup' and location='$location' ";
    return $this->dbObj->ExecuteQuery($sql, 1);
 

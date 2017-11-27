@@ -8,19 +8,16 @@ $no1=0;
   $no=mysqli_num_rows( $result );
 if(isset($_POST['submit']))
   {
-    if($_POST['password'] != $_POST['cpassword']){
- $msg = 'Passwords should be same';
-
- }
 $fullname=$_POST['fullname'];
-$mobileno=$_POST['mobileno'];
-$age=$_POST['age'];
-$gender=$_POST['gender'];
 $bloodgroup=$_POST['bloodgroup'];
 $location=$_POST['location'];
-$password=$_POST['password'];
-
-$id= ($objUser->regd($fullname,$mobileno,$age,$gender,$bloodgroup,$location,$password));
+$mobileno=$_POST['mobileno'];
+$hospital=$_POST['hospital'];
+$req_date=$_POST['req_date'];
+$quantity=$_POST['quantity'];
+$address=$_POST['address'];
+$info=$_POST['info'];
+$id= ($objUser->request($fullname,$bloodgroup,$location,$mobileno,$hospital,$req_date,$quantity,$address,$info));
 if($id)
 {
 $msg="Your info submitted successfully";
@@ -98,7 +95,7 @@ $error="Something went wrong. Please try again";
             <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php }
         else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
         <!-- Content Row -->
-        <form name="donar" action="new.php" method="post">
+        <form name="donar" action="request.php" method="post">
 <div class="row">
 <div class="col-lg-4 mb-4">
 <div class="font-italic">Patient Name<span style="color:red">*</span></div>
