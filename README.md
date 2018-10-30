@@ -1,2 +1,2 @@
 # BloodBank
-An android app for managing blood donation
+A web app for managing blood donation
